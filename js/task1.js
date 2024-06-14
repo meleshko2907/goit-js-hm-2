@@ -1,13 +1,19 @@
-const start = 6;
-const end = 17;
-let number;
-
-for (let i = start; i < end; i++) {
-  if (i % 5 === 0) {
-    number = i;
-    break;
+function makeTransaction(quantity, pricePerDroid, customerCredits) {
+  let total = quantity * pricePerDroid;
+  // console.log(total);
+  let message = 0;
+  if (total > customerCredits) {
+    return message = `Insufficient funds!`
+  } else {
+    return message = `You ordered ${quantity} droids worth ${total} credits!`
   }
- 
+
+  
 }
 
-console.log(number)
+
+console.log(makeTransaction(5, 3000, 23000)); // "You ordered 5 droids worth 15000 credits!"
+console.log(makeTransaction(3, 1000, 15000)); // "You ordered 3 droids worth 3000 credits!"
+console.log(makeTransaction(10, 5000, 8000)); // "Insufficient funds!"
+console.log(makeTransaction(8, 2000, 10000)); // "Insufficient funds!"
+console.log(makeTransaction(10, 500, 5000)); // "You ordered 10 droids worth 5000 credits!"
